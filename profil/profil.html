@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulir Pendaftaran Mahasiswa</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #1e1e2f, #2b5876);
+      color: #f2f2f2;
+      min-height: 100vh;
+      padding: 40px 20px;
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      text-align: center;
+      color: #00c3ff;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px rgba(0, 195, 255, 0.6);
+    }
+
+    section {
+      max-width: 800px;
+      margin: 0 auto 40px auto;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    h2 {
+      color: #ffcc00;
+      border-left: 5px solid #ffcc00;
+      padding-left: 10px;
+      margin-bottom: 15px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    th, td {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background: rgba(0, 195, 255, 0.3);
+      width: 30%;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input, select {
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      outline: none;
+    }
+
+    input::placeholder {
+      color: #ccc;
+    }
+
+    input[type="radio"], input[type="checkbox"] {
+      width: auto;
+      margin-right: 5px;
+    }
+
+    button {
+      background: #00c3ff;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      padding: 12px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #ffcc00;
+      color: #000;
+      transform: scale(1.05);
+    }
+
+    iframe {
+      display: block;
+      margin: 20px auto;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 195, 255, 0.3);
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .back-link a {
+      color: #00c3ff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .back-link a:hover {
+      color: #ffcc00;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Formulir Pendaftaran Mahasiswa</h1>
+
+  <section>
+    <h2>Tabel Biodata</h2>
+    <table>
+      <tr>
+        <th>Nama</th>
+        <td>_____________________</td>
+      </tr>
+      <tr>
+        <th>NIM</th>
+        <td>_____________________</td>
+      </tr>
+      <tr>
+        <th>Jurusan</th>
+        <td>_____________________</td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td>_____________________</td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Formulir Pendaftaran</h2>
+    <form action="proses_pendaftaran.html" method="post">
+      <label for="nama">Nama Lengkap:</label>
+      <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap..." required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="contoh@email.com" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" placeholder="Minimal 8 karakter" required>
+
+      <p>Jenis Kelamin:</p>
+      <label><input type="radio" name="gender" value="Laki-laki"> Laki-laki</label>
+      <label><input type="radio" name="gender" value="Perempuan"> Perempuan</label>
+
+      <p>Pilih Hobi:</p>
+      <label><input type="checkbox" name="hobi" value="Membaca"> Membaca</label>
+      <label><input type="checkbox" name="hobi" value="Olahraga"> Olahraga</label>
+      <label><input type="checkbox" name="hobi" value="Musik"> Musik</label>
+
+      <label for="jurusan">Pilih Jurusan:</label>
+      <select id="jurusan" name="jurusan">
+        <option value="TI">Teknik Informatika</option>
+        <option value="SI">Sistem Informasi</option>
+        <option value="DKV">Desain Komunikasi Visual</option>
+        <option value="TE">Teknik Elektro</option>
+        <option value="TS">Teknik Sipil</option>
+      </select>
+
+      <button type="submit">Kirim Pendaftaran</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>Video Tentang Teknologi / Web Development</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/hMDJyb7VkYw?si=RB3v-PnpALR3W2Ta" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+  </section>
+
+  <div class="back-link">
+    <a href="profile.html">⬅ Kembali ke Halaman Profil</a>
+  </div>
+
+</body>
+</html>
